@@ -5,8 +5,34 @@
     box-sizing: border-box;
 }
 
-h1{
-    font-family: "Shrikhand",cursive;
-    border: 1px solid #fefefe;
-    align-items: center;
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 }
+
+header{
+    font-family: "Shrikhand",cursive;
+    text-align: center;
+    box-shadow:  0 0 0.8em rgb(0 0 0 / 25%); 
+    padding: 0.5em 0;
+    margin: 0;
+    position: relative;
+}
+
+h1{
+  margin: 0.3em 0;  
+}
+
+.ville{
+    display: flex;
+    background-color: #f3f3f3;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+}
+.iconeville{
+    padding-right: 0.7em;
+    font-size: 1.5em;
+}
+
