@@ -19,10 +19,6 @@ header{
     position: relative;
 }
 
-h1{
-  margin: 0.3em 0;  
-}
-
 .ville{
     display: flex;
     background-color: #f3f3f3;
@@ -30,9 +26,104 @@ h1{
     align-items: center;
     justify-content: center;
     font-size: 0.7em;
-}
+}  
+
+h1{
+    margin: 0.3em 0;  
+  }
+
 .iconeville{
     padding-right: 0.7em;
     font-size: 1.5em;
 }
 
+/*explorer*/
+.explorer{
+    height: 16em;
+    text-align: center;
+    padding: 1.2em;
+    
+}
+
+.explorer h2{
+    font-size: 1.3em;
+}
+
+.explorer p{
+    font-size: 0.9em;
+}
+
+.explorer button{
+    font-family: "Roboto",sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1em;
+    background-image: linear-gradient(0deg, rgb(147,86,220,0.9),rgb(255,121,218,0.9));
+    cursor: pointer;
+    padding: 0.9em 1.3em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 1px 5px 0 black;
+    margin-top: 1em;
+}
+
+.explorer button:hover{
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+
+/*Fonctionnement*/
+
+.Fonctionnement{
+    padding-left: 1.1em;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.Fonctionnement h2{
+   font-size: 1.2em;
+}
+
+.Fonctionnement .info{
+    text-align: center;
+    background-color: #f6f6f6;
+    padding: 1.3em;
+    border: 1px solid  #f6f6f6;
+    margin: 1.2em;
+    border-radius: 1.5em;
+    font-size: 1em;
+    box-shadow: 0px 1px 3px 0px;
+}
+
+.Fonctionnement .info:hover{
+    transform: scale(1.02);
+    opacity: 0.5;
+}
+
+.Fonctionnement i{
+    margin-right: 2em;
+    color:grey;
+}
+
+.choix{
+    counter-reset: steps;
+}
+
+.Fonctionnement .info::before{
+    content: counter(steps);
+    counter-increment: steps;
+    width: 2em;
+    height: 2em;
+    background-color: #9356DC;
+    display: flex;
+    border-radius: 60%;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;  
+}
+/*restaurants*/
+.menus{
+    margin-top: 3em;
+    margin-left: 2em;
+}
