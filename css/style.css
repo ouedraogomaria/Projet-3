@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?famille=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
 
-* {
+*, ::before, ::after{
     box-sizing: border-box;
 }
 
@@ -10,9 +10,12 @@ body{
     font-family: "Roboto", sans-serif;
 }
 
+
 header{
+    height: 4em;
     font-family: "Shrikhand",cursive;
     text-align: center;
+    font-size: 0.9em;
     box-shadow:  0 0 0.8em rgb(0 0 0 / 25%); 
     padding: 0.5em 0;
     margin: 0;
@@ -36,7 +39,6 @@ h1{
     padding-right: 0.7em;
     font-size: 1.5em;
 }
-
 /*explorer*/
 .explorer{
     height: 16em;
@@ -63,7 +65,7 @@ h1{
     padding: 0.9em 1.3em;
     border: none;
     border-radius: 2em;
-    box-shadow: 0 1px 5px 0 black;
+    box-shadow: 0 1px 5px -1px black;
     margin-top: 1em;
 }
 
@@ -79,30 +81,37 @@ h1{
     padding-left: 1.1em;
     font-size: 0.9em;
     font-weight: bold;
+    padding: 0;
 }
 
 .Fonctionnement h2{
    font-size: 1.2em;
+   margin-left: 1.5em;
 }
+
 
 .Fonctionnement .info{
     text-align: center;
     background-color: #f6f6f6;
-    padding: 1.3em;
+    padding: 1.5em;
     border: 1px solid  #f6f6f6;
-    margin: 1.2em;
+    margin: 2em;
     border-radius: 1.5em;
     font-size: 1em;
     box-shadow: 0px 1px 3px 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .Fonctionnement .info:hover{
     transform: scale(1.02);
-    opacity: 0.5;
 }
 
 .Fonctionnement i{
-    margin-right: 2em;
+    margin-right: 3em;
     color:grey;
 }
 
@@ -115,15 +124,267 @@ h1{
     counter-increment: steps;
     width: 2em;
     height: 2em;
-    background-color: #9356DC;
     display: flex;
-    border-radius: 60%;
-    justify-content: center;
     align-items: center;
-    color: #ffffff;  
+    justify-content: center;
+    background-color: #9356DC;
+    border-radius: 60%;
+    color: #ffffff;
+    position: absolute;
+    left: -10px;
+    top: 15px;
 }
+
 /*restaurants*/
+/*images*/
 .menus{
+    background-color: #f3f3f3;
+    height: 64em;
+    padding: 1em;
+    margin-bottom: 5em;
+}
+
+.img_menu{
+    object-fit: cover;
+    width: 100%;
+    height: 10em;
+    border-radius: 20px 20px 0 0;   
+}
+
+.card_menu{
+    width: 100%;
+    height: 14em;
+    background-color: #ffffff;
+    border: 0 0 20px 20px;
+    box-shadow: 25px 25px 25px 25px #f2f2f2;
+    border-radius: 20px 20px 15px 15px;
+    padding-bottom: 0.3em;
+}
+
+.menus h2{
+    font-size: 1.2em;
+}
+
+.bloc_menus1{
+    margin-bottom: 1.5em;
+}
+
+.bloc_menus1{
+    margin-top: 1.5em;
+}
+
+.card_menumarge{ 
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
+
+/*description*/
+.description{
+    padding-left: 0.5em;
+    margin-top: 0.8em;
+}
+
+.description>h3{
+    margin: 0.2em;
+    font-size: 0.9em;
+}
+
+.description>p{
+    margin: 0.2em;
+    font-size: 0.7em;
+}
+
+.description i{
+   font-size: 1.5em;
+   position: absolute;
+   right: 10%;
+   transform: translateY(-150%); 
+}
+
+.description h3,p{
+    padding: 0;
+}
+
+
+/*footer*/
+footer{
+    height: 10em;
+    background-color: #353539;
+    color: #ffffff;
+    padding: 0.1em;
+}
+
+footer h2{
+    font-family: "Shrikhand",sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+footer p{
+    font-size: 0.7em;
+    margin: 0.5em;
+}
+
+footer a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 0.7em;
+}
+
+footer i{
+    margin-right: 0.8em;
+}
+
+.footer{
+    padding-left: 0.9em;
+}
+
+
+/*responsives accueil*/
+@media screen and (min-width= 768px){
+    .info{
+        margin:0.5em;
+    }
+    .choix{
+        display: flex;
+    }
+}
+@media screen and (min-width= 992px){
+
+    .card_menu{
+        width: 45%;
+        height: auto;
+    }
+    .img_menu{
+        width: 100%;
+    }
+
+   .bloc_menus1{
+        display: flex;
+        width: 95%;
+   }
+
+}
+
+
+/*A la française*/
+.img_restau{
+    object-fit: cover;
+    width: 100%;
+}
+
+main{
+    background-color: #f6f6f6;
+}
+
+.restau_menu{
+    height: auto;
+    align-items: center;
+    background-color: #f6f6f6;
+    padding-left: 0.5em;
+    padding-right: 0.5em; 
+    border-radius: 35px 35px 0 0;
+    transform: translateY(-8%);
+}
+
+.restau_menu h2{
+    font-family: "Shrikhand",cursive;
+    padding-top: 1.5em;
+}
+
+.restau_menu i{
+   font-size: 1.5em;
+   position: absolute;
+   right: 10%;
+   transform: translateY(-200%); 
+}
+
+.group_repas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #f6f6f6;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 1.2em;
+    font-size: 0.9em;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    
+}
+
+.detail{
+    padding: 0.5em;
+}
+
+.detail>h4,p{
+    margin: 0.1em;
+}
+
+.prix_repas{
+    padding: 0.5em;
+    font-weight: bold;
+    transform: translateY(30%);
+}
+.group_repas p{
+    font-size: 0.8em;
+}
+
+.categorie_repas h3{
+    padding-top: 1em;
+    margin-bottom: 0;
+}
+
+.detail_check{
+    background-color: #99e2D0;
+    border-radius: 0 1em 1em 0;
+    margin-right: -6em; 
+    width: 4em;
+    padding: 1.8em;
+    transition: all 0.5s;
+}
+
+.group_repas:hover .detail_check{
+    margin-right: 0;
+    transform: scale(1.05);
+}
+
+.group_repas i{
+     transform: translateY(-50%);
+     border: 1px solid black;
+     width: 1em;
+     height: 1em;
+     border-radius: 60%;
+     justify-content: center;
+}
+
+.commande{
+    text-align: center;
     margin-top: 3em;
-    margin-left: 2em;
+}
+
+.commande button{
+    font-family: "Roboto",sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1em;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,0.9));
+    cursor: pointer;
+    padding: 0.9em 2em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 1px 5px 0 black; 
+}
+
+
+/*responsives à la française*/
+@media screen and (max-width= 768px){
+    
+
+}
+@media screen and (max-width= 992px){
+    
+
+
 }
