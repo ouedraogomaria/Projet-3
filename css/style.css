@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?famille=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
 
-*, ::before, ::after{
+*{
     box-sizing: border-box;
 }
 
@@ -44,7 +44,6 @@ h1{
     height: 16em;
     text-align: center;
     padding: 1.2em;
-    
 }
 
 .explorer h2{
@@ -78,10 +77,9 @@ h1{
 /*Fonctionnement*/
 
 .Fonctionnement{
-    padding-left: 1.1em;
     font-size: 0.9em;
     font-weight: bold;
-    padding: 0;
+    background-color: #ffffff;
 }
 
 .Fonctionnement h2{
@@ -92,14 +90,13 @@ h1{
 
 .Fonctionnement .info{
     text-align: center;
-    background-color: #f6f6f6;
     padding: 1.5em;
     border: 1px solid  #f6f6f6;
     margin: 2em;
     border-radius: 1.5em;
     font-size: 1em;
     box-shadow: 0px 1px 3px 0px;
-    position: relative;
+    position: sticky;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,40 +105,40 @@ h1{
 
 .Fonctionnement .info:hover{
     transform: scale(1.02);
+    background-color: rgb(147,86,220,0.2);
+}
+
+.Fonctionnement .info:hover .fa-solid{
+    color:  rgb(147,86,220,1);;
 }
 
 .Fonctionnement i{
-    margin-right: 3em;
+    margin-right: auto;
     color:grey;
 }
 
-.choix{
-    counter-reset: steps;
+.Fonctionnement p{
+    margin-right: auto;
 }
 
-.Fonctionnement .info::before{
-    content: counter(steps);
-    counter-increment: steps;
-    width: 2em;
-    height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #9356DC;
-    border-radius: 60%;
-    color: #ffffff;
-    position: absolute;
-    left: -10px;
-    top: 15px;
+.Fonctionnement .numero_info{
+      left: -15px;
+      width: 1.8em;
+      height: 1.9em;
+      background-color: #9356Dc;
+      border-radius: 60%;
+      color: #ffffff;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 }
 
 /*restaurants*/
 /*images*/
 .menus{
-    background-color: #f3f3f3;
-    height: 64em;
+    height: 72em;
     padding: 1em;
-    margin-bottom: 5em;
 }
 
 .img_menu{
@@ -156,26 +153,27 @@ h1{
     height: 14em;
     background-color: #ffffff;
     border: 0 0 20px 20px;
-    box-shadow: 25px 25px 25px 25px #f2f2f2;
-    border-radius: 20px 20px 15px 15px;
-    padding-bottom: 0.3em;
+    box-shadow: 20px 10px 10px 25px #f2f2f2;
+    border-radius: 15px 15px 15px 15px;
+    text-decoration: none;
+    color: black;
 }
 
 .menus h2{
     font-size: 1.2em;
+    margin: 0;
 }
 
 .bloc_menus1{
-    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.bloc_menus1{
-    margin-top: 1.5em;
-}
-
-.card_menumarge{ 
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
+.bloc_menus2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /*description*/
@@ -194,15 +192,43 @@ h1{
     font-size: 0.7em;
 }
 
-.description i{
-   font-size: 1.5em;
-   position: absolute;
+.description .fa-solid{
    right: 10%;
    transform: translateY(-150%); 
+   color: transparent;
+   background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
+   background-clip: text;
+   font-size: 1.5em;
+   position: absolute;
+   opacity: 0;
+   -webkit-background-clip: text;
+   transition: all 2s ease-in-out;    
+}
+.description .fa-regular{
+    right: 10%;
+    transform: translateY(-150%);
+    font-size: 1.5em;
+    position: absolute;     
+ }
+.description:hover .fa-solid{
+    opacity: 1;
+    transform: translateY(-150%) scale(1.2);
 }
 
 .description h3,p{
     padding: 0;
+}
+
+.nouveau{
+    display: flex;
+    align-items: center;
+    width: 5em;
+    height: 2em;
+    justify-content: center;
+    background-color:  #99E2Dc;
+    transform: translateY(150%);
+    margin-left: auto;
+    margin-right: 1em;
 }
 
 
@@ -266,6 +292,8 @@ footer i{
 }
 
 
+
+
 /*A la française*/
 .img_restau{
     object-fit: cover;
@@ -276,92 +304,114 @@ main{
     background-color: #f6f6f6;
 }
 
+
+.française .fa-solid{
+    font-size: 1.5em;
+    position: absolute;
+    right: 10%;
+    transform: translateY(-200%); 
+    color: transparent;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
+    background-clip: text;
+    opacity: 0;
+    -webkit-background-clip: text;
+    transition: all 2s ease-in-out;    
+ }
+.française .fa-regular{
+     font-size: 1.5em;
+     position: absolute;
+     right: 10%; 
+     transform:  translateY(-200%)   
+  }
+  
+.française:hover .fa-solid{
+     opacity: 1;
+     transform:  translateY(-200%) scale(1.2);
+ }
+
 .restau_menu{
     height: auto;
+    padding: 0 1em;
     align-items: center;
-    background-color: #f6f6f6;
-    padding-left: 0.5em;
-    padding-right: 0.5em; 
-    border-radius: 35px 35px 0 0;
+    background-color: #f6f6f6; 
+    border-radius: 30px 30px 0 0;
     transform: translateY(-8%);
 }
 
-.restau_menu h2{
+.française h2{
     font-family: "Shrikhand",cursive;
     padding-top: 1.5em;
 }
 
-.restau_menu i{
-   font-size: 1.5em;
-   position: absolute;
-   right: 10%;
-   transform: translateY(-200%); 
-}
 
-.group_repas{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border: 1px solid #f6f6f6;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-radius: 1.2em;
-    font-size: 0.9em;
+.categorie_repas{
     background-color: #ffffff;
+    border-radius: 1em;
+}
+.group_repas{
+    display: flex; 
     overflow: hidden;
-
-    
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    margin-bottom: 1em;
+    border-radius: 1em;
 }
 
 .detail{
-    padding: 0.5em;
+    padding: 1em;
+}
+.detail>h4,p{
+    margin: 0;
 }
 
-.detail>h4,p{
-    margin: 0.1em;
-}
 
 .prix_repas{
-    padding: 0.5em;
+    margin-left: auto;
     font-weight: bold;
-    transform: translateY(30%);
-}
-.group_repas p{
-    font-size: 0.8em;
-}
-
-.categorie_repas h3{
-    padding-top: 1em;
-    margin-bottom: 0;
+    padding: 0.5em;
+    display: flex;
+    align-items: flex-end;
 }
 
 .detail_check{
-    background-color: #99e2D0;
-    border-radius: 0 1em 1em 0;
-    margin-right: -6em; 
+    background-color: #99E2Dc;
+    margin-right: -4em;
     width: 4em;
-    padding: 1.8em;
-    transition: all 0.5s;
+    border-radius: 0 1em 1em 0;
+    transition: all 1s;
 }
 
-.group_repas:hover .detail_check{
+.group_repas:hover .detail_check{ 
     margin-right: 0;
     transform: scale(1.05);
+    
+}  
+
+.group_repas:hover .detail_check i{
+    animation-name: rotatechek 1s ease-in-out;
+}
+.detail_check i{
+    right: 20px;
+    transform: translateY(70%);
+    font-size: 0.9em;
+    width: 2em;
+    height: 2em;
+    background-color: #ffffff;
+    border-radius: 60%;
+    color:  #99E2Dc;
+
 }
 
-.group_repas i{
-     transform: translateY(-50%);
-     border: 1px solid black;
-     width: 1em;
-     height: 1em;
-     border-radius: 60%;
-     justify-content: center;
+@keyframes rotatecheck {
+    0%{
+        transform: rotate(-270dg);
+    }
+    100%{
+        transform: rotate(0);
+    }
 }
-
+/*commande*/
 .commande{
     text-align: center;
-    margin-top: 3em;
 }
 
 .commande button{
@@ -376,7 +426,7 @@ main{
     border-radius: 2em;
     box-shadow: 0 1px 5px 0 black; 
 }
-
+    
 
 /*responsives à la française*/
 @media screen and (max-width= 768px){
