@@ -395,7 +395,7 @@ main{
 .group_repas:hover .detail_check{ 
     margin-right: 0;
     transform: scale(1.05);
-    
+    cursor: pointer;
 }  
 
 
