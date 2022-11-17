@@ -21,6 +21,7 @@ header{
     margin: 0;
     position: relative;
 }
+ 
 
 .ville{
     display: flex;
@@ -65,7 +66,7 @@ h1{
     border: none;
     border-radius: 2em;
     box-shadow: 0 1px 5px -1px black;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .explorer button:hover{
@@ -77,6 +78,8 @@ h1{
 /*Fonctionnement*/
 
 .Fonctionnement{
+    height: 28em;
+    width: 100%;
     font-size: 0.9em;
     font-weight: bold;
     background-color: #ffffff;
@@ -85,6 +88,7 @@ h1{
 .Fonctionnement h2{
    font-size: 1.2em;
    margin-left: 1.5em;
+   padding-top: 2em;
 }
 
 
@@ -138,6 +142,7 @@ h1{
 /*images*/
 .menus{
     height: 72em;
+    width: 100%;
     padding: 1em;
 }
 
@@ -330,7 +335,7 @@ main{
  }
 
 .restau_menu{
-    height: auto;
+    height: 60em;
     padding: 0 1em;
     align-items: center;
     background-color: #f6f6f6; 
@@ -363,6 +368,10 @@ main{
     margin: 0;
 }
 
+.composition_restau h3{
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
 
 .prix_repas{
     margin-left: auto;
@@ -376,6 +385,9 @@ main{
     background-color: #99E2Dc;
     margin-right: -4em;
     width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 0 1em 1em 0;
     transition: all 1s;
 }
@@ -386,19 +398,22 @@ main{
     
 }  
 
-.group_repas:hover .detail_check i{
-    animation-name: rotatechek 1s ease-in-out;
-}
+
 .detail_check i{
-    right: 20px;
-    transform: translateY(70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.9em;
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
     background-color: #ffffff;
     border-radius: 60%;
     color:  #99E2Dc;
 
+}
+
+.group_repas:hover .detail_check i{
+    animation-name: rotatecheck 1s ease-in-out;
 }
 
 @keyframes rotatecheck {
@@ -411,6 +426,7 @@ main{
 }
 /*commande*/
 .commande{
+    height: 5em;
     text-align: center;
 }
 
