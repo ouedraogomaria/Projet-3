@@ -45,6 +45,7 @@ h1{
     height: 16em;
     text-align: center;
     padding: 1.2em;
+    background-color: #f6f6f6;
 }
 
 .explorer h2{
@@ -78,7 +79,7 @@ h1{
 /*Fonctionnement*/
 
 .Fonctionnement{
-    height: 28em;
+    height: 23em;
     width: 100%;
     font-size: 0.9em;
     font-weight: bold;
@@ -144,9 +145,10 @@ h1{
 /*restaurants*/
 /*images*/
 .menus{
-    height: 72em;
     width: 100%;
+    height: 72em;
     padding: 1em;
+    background-color: #f6f6f6;
 }
 
 .img_menu{
@@ -160,7 +162,6 @@ h1{
     width: 100%;
     height: 14em;
     background-color: #ffffff;
-    border: 0 0 20px 20px;
     box-shadow: 20px 10px 10px 25px #f2f2f2;
     border-radius: 15px 15px 15px 15px;
     text-decoration: none;
@@ -188,6 +189,7 @@ h1{
 .description{
     padding-left: 0.5em;
     margin-top: 0.8em;
+    position: relative;
 }
 
 .description>h3{
@@ -245,7 +247,8 @@ footer{
     height: 10em;
     background-color: #353539;
     color: #ffffff;
-    padding: 0.1em;
+    padding-left: 0.5em;
+    padding-top: 0.1em;
 }
 
 footer h2{
@@ -265,11 +268,7 @@ footer a{
 }
 
 footer i{
-    margin-right: 0.8em;
-}
-
-.footer{
-    padding-left: 0.9em;
+    margin-right: 1em;
 }
 
 
@@ -278,14 +277,13 @@ footer i{
 @media screen and (min-width: 768px){
     .Fonctionnement{
         height: auto;
-        margin-bottom: 2em;
+        
         }
     .Fonctionnement h2{
         margin-left: 1em;
     }
     .info{
         width: 60%;
-
         font-weight: 100;
     }
     .choix{
@@ -303,19 +301,70 @@ footer i{
   
 }
 
+@media screen and (min-width: 992px){
+    .Fonctionnement{
+        padding-left: 6em;
+        padding-right: 6em;
+    }
+
+    .menus{
+       height: 42em;
+       padding-right: 5em;
+    }
+
+    .card_menu{
+        width: 60%;
+    }
+
+    .bloc_menus1{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bloc_menus2{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bloc_menus1{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+ 
+    .bloc_menus2{
+        margin-top: 2em;
+    }
+
+    .nouveau{
+        display:flex;
+        right: 5%;
+        transform: translateX(450%);
+        margin-top: auto;
+        
+    }
+
+    .menus h2{
+       margin-left: 5em;
+       margin-top: 2em;
+   }
+   
+}
+
 
 
 
 /*A la française*/
+.restau_menu{
+    padding: 0 1em;
+    align-items: center;
+    background-color: #f6f6f6; 
+    border-radius: 30px 30px 0 0;
+}
+
 .img_restau{
     object-fit: cover;
     width: 100%;
 }
-
-main{
-    background-color: #f6f6f6;
-}
-
 
 .française .fa-solid{
     font-size: 1.5em;
@@ -341,43 +390,50 @@ main{
      transform:  translateY(-200%) scale(1.2);
  }
 
-.restau_menu{
-    height: 60em;
-    padding: 0 1em;
-    align-items: center;
-    background-color: #f6f6f6; 
-    border-radius: 30px 30px 0 0;
-    transform: translateY(-8%);
-}
-
 .française h2{
     font-family: "Shrikhand",cursive;
     padding-top: 1.5em;
+    font-weight: 300;
 }
 
+.composition_restau h3{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    position: relative;
+}
+
+.composition_restau h3::after{
+    content: attr(f86c);
+    height: 0.2em;
+    width: 1.7em;
+    top: 1.2em;
+    left: 0.1em;
+    background-color: #99E2Dc;
+    position: absolute;
+}
 
 .categorie_repas{
-    background-color: #ffffff;
-    border-radius: 1em;
+    
 }
+
 .group_repas{
     display: flex; 
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     margin-bottom: 1em;
     border-radius: 1em;
+    font-size: 0.8em;
 }
 
 .detail{
     padding: 1em;
 }
+
 .detail>h4,p{
     margin: 0;
-}
-
-.composition_restau h3{
-    margin-top: 2em;
-    margin-bottom: 0.5em;
 }
 
 .prix_repas{
@@ -395,14 +451,12 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 1em 1em 0;
     transition: all 1s;
 }
 
 .group_repas:hover .detail_check{ 
     margin-right: 0;
     transform: scale(1.05);
-    
 }  
 
 .detail_check i{
@@ -417,8 +471,8 @@ main{
     color:  #99E2Dc;
 }
 
-.group_repas:hover i{
-    animation: rotatechek 5s linear;
+.group_repas:hover .detail_check i{
+    animation: rotatecheck 1s ease-in-out;
 }
 
 @keyframes rotatecheck{
@@ -432,7 +486,6 @@ main{
 
 /*commande*/
 .commande{
-    height: 5em;
     text-align: center;
 }
 
@@ -448,10 +501,584 @@ main{
     border-radius: 2em;
     box-shadow: 0 1px 5px 0 black; 
 }
-    
+
+/*footer français*/
+.footer_français{
+    height: 10em;
+    background-color: #353539;
+    color: #ffffff;
+}
+
+.footer_français h2{
+    font-family: "Shrikhand",sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+.footer_français p{
+    font-size: 0.7em;
+    margin: 0.5em;
+}
+
+.footer_français a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 0.7em;
+}
+
+.footer_français i{
+    margin-right: 1em;
+}
+   
 
 /*responsives à la française*/
 
     
+/*La note enchantée*/
+.Note_menu{
+    padding: 0 1em;
+    align-items: center;
+    background-color: #f6f6f6; 
+    border-radius: 30px 30px 0 0;
+}
+
+.img{
+    object-fit: cover;
+    width: 100%;
+    height: 18em;
+}
+
+.enchante .fa-solid{
+    transform: translateY(-200%); 
+    right: 5%;
+    position: absolute;
+    font-size: 1.5em;
+    color: transparent;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
+    background-clip: text;
+    opacity: 0;
+    -webkit-background-clip: text;
+    transition: all 2s ease-in-out;  
+ }
+
+.enchante .fa-regular{
+     font-size: 1.5em;
+     position: absolute;
+     right: 5%; 
+     transform:  translateY(-200%); 
+  }
+  
+.enchante:hover .fa-solid{
+     opacity: 1;
+     transform:  translateY(-200%) scale(1.2);
+ }
+
+.enchante h2{
+    font-family: "Shrikhand",cursive;
+    padding-top: 2em;
+    font-weight: 300;
+}
+
+.menu_restau h3{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    position: relative;
+}
+.menu_restau h3::after{
+    content: attr(f86c);
+    height: 0.2em;
+    width: 1.7em;
+    top: 1.2em;
+    left: 0.1em;
+    background-color: #99E2Dc;
+    position: absolute;
+}
+
+.groupe{
+    display: flex; 
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    font-size: 0.9em;
+}
+
+.detail_repas{
+    padding: 1em;
+}
+
+.detail_repas p{
+    font-size: 0.8em;
+}
+
+.detail_repas>h4,p{
+    margin: 0;
+}
+
+.prix{
+    margin-left: auto;
+    font-weight: bold;
+    padding: 0.5em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.check{
+    background-color: #99E2Dc;
+    margin-right: -4em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 1em 1em 0;
+    transition: all 1s;
+}
+
+.groupe:hover .check{ 
+    margin-right: 0;
+    transform: scale(1.05);
+    
+}  
+
+.check i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #ffffff;
+    border-radius: 60%;
+    color:  #99E2Dc;
+}
+
+.groupe:hover .check i{
+    animation: rotatecheck 1s ease-in-out;
+}
+
+@keyframes rotatecheck{
+    0%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+/*commande*/
+.commandez{
+    text-align: center;
+}
+
+.commandez button{
+    font-family: "Roboto",sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1em;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,0.9));
+    cursor: pointer;
+    padding: 0.9em 2em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 1px 5px 0 black; 
+}
 
 
+/*footer enchante*/
+.footer_enchante{
+    height: 10em;
+    background-color: #353539;
+    color: #ffffff;
+}
+
+.footer_enchante h2{
+    font-family: "Shrikhand",sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.footer_enchante p{
+    font-size: 0.7em;
+    margin: 0.5em;
+}
+
+.footer_enchante a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 0.7em;
+}
+
+.footer_enchante i{
+    margin-right: 1em;
+}
+/*responsive enchante*/
+
+
+
+
+/*La palette du goût*/
+.restaurants{
+    padding: 0 1em;
+    align-items: center;
+    background-color: #f6f6f6; 
+    border-radius: 30px 30px 0 0;
+}
+
+.img_palette{
+    object-fit: cover;
+    width: 100%;
+    height: 18em;
+}
+
+.Palette .fa-solid{
+    transform: translateY(-200%); 
+    right: 5%;
+    position: absolute;
+    font-size: 1.5em;
+    color: transparent;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
+    background-clip: text;
+    opacity: 0;
+    -webkit-background-clip: text;
+    transition: all 2s ease-in-out;  
+ }
+
+.Palette .fa-regular{
+     font-size: 1.5em;
+     position: absolute;
+     right: 5%; 
+     transform:  translateY(-200%);  
+  }
+  
+.Palette:hover .fa-solid{
+     opacity: 1;
+     transform:  translateY(-200%) scale(1.2);
+ }
+
+.Palette h2{
+    font-family: "Shrikhand",cursive;
+    padding-top: 2em;
+    font-weight: 300;
+    position: relative;
+}
+
+.different_menu h3{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    position: relative;
+}
+
+.different_menu h3::after{
+    content: attr(f86c);
+    height: 0.2em;
+    width: 1.7em;
+    top: 1.2em;
+    left: 0.1em;
+    background-color: #99E2Dc;
+    position: absolute;
+}
+
+.composition{
+    display: flex; 
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    font-size: 0.9em;
+}
+
+.liste_repas{
+    padding: 1em;
+}
+
+.liste_repas p{
+    font-size: 0.8em;
+}
+.liste_repas>h4,p{
+    margin: 0;
+}
+
+.composition_prix{
+    margin-left: auto;
+    font-weight: bold;
+    padding: 0.5em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.confirmation{
+    background-color: #99E2Dc;
+    margin-right: -4em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 1em 1em 0;
+    transition: all 1s;
+}
+
+.composition:hover .confirmation{ 
+    margin-right: 0;
+    transform: scale(1.05);
+    
+}  
+
+.confirmation i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #ffffff;
+    border-radius: 60%;
+    color:  #99E2Dc;
+}
+
+.composition:hover i{
+    animation: rotatecheck 1s ease-in-out;
+}
+
+@keyframes rotatecheck{
+    0%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+/*commande*/
+.choix_commande{
+    text-align: center;
+}
+
+.choix_commande button{
+    font-family: "Roboto",sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1em;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,0.9));
+    cursor: pointer;
+    padding: 0.9em 2em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 1px 5px 0 black; 
+}
+
+
+/*footer palette*/
+.footer_palette{
+    height: 10em;
+    background-color: #353539;
+    color: #ffffff;
+}
+
+.footer_palette h2{
+    font-family: "Shrikhand",sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.footer_palette p{
+    font-size: 0.7em;
+    margin: 0.5em;
+}
+
+.footer_palette a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 0.7em;
+}
+
+.footer_palette i{
+    margin-right: 1em;
+}
+
+/*responsive palette*/
+
+/*Le delice des sens*/
+.restau_delice{
+    padding: 0 1em;
+    align-items: center;
+    background-color: #f6f6f6; 
+    border-radius: 30px 30px 0 0;
+}
+
+.img_delice{
+    object-fit: cover;
+    width: 100%;
+    height: 18em;
+}
+
+.delice .fa-solid{
+    transform: translateY(-200%); 
+    right: 5%;
+    position: absolute;
+    font-size: 1.5em;
+    color: transparent;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
+    background-clip: text;
+    opacity: 0;
+    -webkit-background-clip: text;
+    transition: all 2s ease-in-out;  
+ }
+
+.delice .fa-regular{
+     font-size: 1.5em;
+     position: absolute;
+     right: 5%; 
+     transform:  translateY(-200%);  
+  }
+  
+.delice:hover .fa-solid{
+     opacity: 1;
+     transform:  translateY(-200%) scale(1.2);
+ }
+
+.delice h2{
+    font-family: "Shrikhand",cursive;
+    padding-top: 2em;
+    font-weight: 300;
+}
+
+.composition_menu h3{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    position: relative;
+}
+.composition_menu h3::after{
+    content: attr(f86c);
+    height: 0.2em;
+    width: 1.7em;
+    top: 1.2em;
+    left: 0.1em;
+    background-color: #99E2Dc;
+    position: absolute;
+}
+
+.liste_menu{
+    display: flex; 
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    font-size: 0.9em;
+}
+
+.repas_liste{
+    padding: 1em;
+}
+
+.repas_liste p{
+    font-size: 0.8em;
+}
+
+.repas_liste>h4,p{
+    margin: 0;
+}
+
+.prix_menu{
+    margin-left: auto;
+    font-weight: bold;
+    padding: 0.5em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.confirmation_menu{
+    background-color: #99E2Dc;
+    margin-right: -4em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 1em 1em 0;
+    transition: all 1s;
+}
+
+.liste_menu:hover .confirmation_menu{ 
+    margin-right: 0;
+    transform: scale(1.05);
+    
+}  
+
+.confirmation_menu i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #ffffff;
+    border-radius: 60%;
+    color:  #99E2Dc;
+}
+
+.liste_menu:hover i{
+    animation: rotatecheck 1s ease-in-out;
+}
+
+@keyframes rotatecheck{
+    0%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+/*commande*/
+.commande_delice{
+    text-align: center;
+}
+
+.commande_delice button{
+    font-family: "Roboto",sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1em;
+    background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,0.9));
+    cursor: pointer;
+    padding: 0.9em 2em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 1px 5px 0 black; 
+}
+
+
+/*footer palette*/
+.footer_delice{
+    height: 10em;
+    background-color: #353539;
+    color: #ffffff;
+}
+
+.footer_delice h2{
+    font-family: "Shrikhand",sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.footer_delice p{
+    font-size: 0.7em;
+    margin: 0.5em;
+}
+
+.footer_delice a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 0.7em;
+}
+
+.footer_delice i{
+    margin-right: 1em;
+}
