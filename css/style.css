@@ -206,7 +206,7 @@ h1{
    right: 10%;
    transform: translateY(-150%); 
    color: transparent;
-   background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
+   background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(229, 12, 168));
    background-clip: text;
    font-size: 1.5em;
    position: absolute;
@@ -235,12 +235,59 @@ h1{
     width: 5em;
     height: 2em;
     justify-content: center;
-    background-color:  #99E2Dc;
+    color:  #13433f;
+    background-color: #99E2Dc;
     transform: translateY(150%);
     margin-left: auto;
     margin-right: 1em;
 }
 
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    color: #9356Dc;
+    background-color: #ffffff;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.5;
+    animation: disparaitre 1s 6s forwards;
+}
+
+.loader p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    width: 8em;
+    font-size: 1.5em;
+    border: 5px solid #9356Dc;
+    border-top: 5px solid #99E2Dc;
+    border-bottom: 5px solid #FF79DA;
+    border-radius: 50%;
+    font-family: "Shrikhand",cursive;
+    animation: spin 3s ease-in-out 2;
+}
+
+@keyframes disparaitre{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
 
 /*footer*/
 footer{
@@ -270,7 +317,6 @@ footer a{
 footer i{
     margin-right: 1em;
 }
-
 
 /*responsives oh my food*/
 
@@ -351,8 +397,6 @@ footer i{
 }
 
 
-
-
 /*A la française*/
 .restau_menu{
     padding: 0 1em;
@@ -369,7 +413,7 @@ footer i{
 .française .fa-solid{
     font-size: 1.5em;
     position: absolute;
-    right: 10%;
+    right: 3%;
     transform: translateY(-200%); 
     color: transparent;
     background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
@@ -381,7 +425,7 @@ footer i{
 .française .fa-regular{
      font-size: 1.5em;
      position: absolute;
-     right: 10%; 
+     right: 3%; 
      transform:  translateY(-200%)   
   }
   
@@ -413,19 +457,13 @@ footer i{
     position: absolute;
 }
 
-.categorie_repas{
-    
-}
-
 .group_repas{
     display: flex; 
-    border: 1px solid #ffffff;
     background-color: #ffffff;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    margin-bottom: 1em;
+    margin: 1em 0;
     border-radius: 1em;
-    font-size: 0.8em;
 }
 
 .detail{
@@ -484,9 +522,33 @@ footer i{
     }
 }
 
+.categorie_repas{
+    animation: apparence 2s;
+}
+
+@keyframes apparence{
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform: scale(0.2);
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    75%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
 /*commande*/
 .commande{
     text-align: center;
+    height: 10em;
+    padding-top: 3em;
 }
 
 .commande button{
@@ -531,8 +593,55 @@ footer i{
    
 
 /*responsives à la française*/
+@media screen and (min-width: 768px){
+    .img_restau{
+        width:100%;
+        height: auto; 
+    }
 
-    
+    .restau_menu{
+        padding: 0.5em;
+        border-radius: 0;
+    }
+    .composition_restau{
+        display: flex;
+        height: 15em;
+    }
+    .composition_restau h3{
+        font-size: 0.9em;
+    }
+    .categorie_repas{
+        width: 40%;
+        transform: translateY(25%);
+    }
+    .commande{
+        padding-top: 5em;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .img_restau{
+        height: 30em;
+    }
+    .composition_restau{
+        width: 100%;
+    }
+
+    .restau_menu{
+        padding: 1em;
+    }
+
+    .française h2{
+        padding-top: 0;
+    }
+
+    .commande{
+        margin-top: 2.5em;
+    }
+}
+
+
 /*La note enchantée*/
 .Note_menu{
     padding: 0 1em;
@@ -549,7 +658,7 @@ footer i{
 
 .enchante .fa-solid{
     transform: translateY(-200%); 
-    right: 5%;
+    right: 3%;
     position: absolute;
     font-size: 1.5em;
     color: transparent;
@@ -563,7 +672,7 @@ footer i{
 .enchante .fa-regular{
      font-size: 1.5em;
      position: absolute;
-     right: 5%; 
+     right: 3%; 
      transform:  translateY(-200%); 
   }
   
@@ -596,21 +705,15 @@ footer i{
 
 .groupe{
     display: flex; 
-    border: 1px solid #ffffff;
     background-color: #ffffff;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     margin-bottom: 1em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .detail_repas{
     padding: 1em;
-}
-
-.detail_repas p{
-    font-size: 0.8em;
 }
 
 .detail_repas>h4,p{
@@ -670,6 +773,8 @@ footer i{
 /*commande*/
 .commandez{
     text-align: center;
+    height: 10em;
+    padding-top: 3em;
 }
 
 .commandez button{
@@ -714,7 +819,52 @@ footer i{
     margin-right: 1em;
 }
 /*responsive enchante*/
+@media screen and (min-width: 768px){
+    .img{
+        width:100%;
+        height: auto; 
+    }
 
+    .Note_menu{
+        padding: 0.5em;
+        border-radius: 0;
+    }
+    .menu_restau{
+        display: flex;
+        height: 15em;
+    }
+    .menu_restau h3{
+        font-size: 0.9em;
+    }
+    .categorie{
+        width: 40%;
+        transform: translateY(25%);
+    }
+    .commandez{
+        padding-top: 5em;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .img{
+        height: 50em;
+    }
+    .menu_restau{
+        width: 100%;
+    }
+
+    .Note_menu{
+        padding: 1em;
+    }
+
+    .enchante h2{
+        padding-top: 0;
+    }
+    .commandez{
+        margin-top: 2.5em;
+    }
+}
 
 
 
@@ -734,7 +884,7 @@ footer i{
 
 .Palette .fa-solid{
     transform: translateY(-200%); 
-    right: 5%;
+    right: 3%;
     position: absolute;
     font-size: 1.5em;
     color: transparent;
@@ -748,7 +898,7 @@ footer i{
 .Palette .fa-regular{
      font-size: 1.5em;
      position: absolute;
-     right: 5%; 
+     right: 3%; 
      transform:  translateY(-200%);  
   }
   
@@ -783,22 +933,17 @@ footer i{
 
 .composition{
     display: flex; 
-    border: 1px solid #ffffff;
     background-color: #ffffff;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     margin-bottom: 1em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .liste_repas{
     padding: 1em;
 }
 
-.liste_repas p{
-    font-size: 0.8em;
-}
 .liste_repas>h4,p{
     margin: 0;
 }
@@ -856,6 +1001,8 @@ footer i{
 /*commande*/
 .choix_commande{
     text-align: center;
+    height: 10em;
+    padding-top: 3em;
 }
 
 .choix_commande button{
@@ -901,6 +1048,54 @@ footer i{
 }
 
 /*responsive palette*/
+@media screen and (min-width: 768px){
+    .img_palette{
+        width:100%;
+        height: auto; 
+    }
+
+    .restaurants{
+        padding: 0.5em;
+        border-radius: 0;
+    }
+    .different_menu{
+        display: flex;
+        height: 15em;
+    }
+    .different_menu h3{
+        font-size: 0.9em;
+    }
+    .resto_palette{
+        width: 40%;
+        transform: translateY(25%);
+    }
+    .choix_commande{
+        padding-top: 5em;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .img_palette{
+        height: 50em;
+    }
+    .different_menu{
+        width: 100%;
+    }
+
+    .restaurants{
+        padding: 1em;
+    }
+
+    .Palette h2{
+        padding-top: 0;
+    }
+    .choix_commande{
+        margin-top: 2.5em;
+    }
+}
+
+
 
 /*Le delice des sens*/
 .restau_delice{
@@ -965,21 +1160,15 @@ footer i{
 
 .liste_menu{
     display: flex; 
-    border: 1px solid #ffffff;
     background-color: #ffffff;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     margin-bottom: 1em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .repas_liste{
     padding: 1em;
-}
-
-.repas_liste p{
-    font-size: 0.8em;
 }
 
 .repas_liste>h4,p{
@@ -1039,6 +1228,8 @@ footer i{
 /*commande*/
 .commande_delice{
     text-align: center;
+    height: 10em;
+    padding-top: 3em;
 }
 
 .commande_delice button{
@@ -1081,4 +1272,52 @@ footer i{
 
 .footer_delice i{
     margin-right: 1em;
+}
+@media screen and (min-width: 768px){
+    .img_delice{
+        width:100%;
+        height: auto; 
+    }
+
+    .restau_delice{
+        padding: 0.5em;
+        border-radius: 0;
+    }
+    .composition_menu{
+        display: flex;
+        height: 15em;
+    }
+    .composition_menu h3{
+        font-size: 0.9em;
+    }
+    .categorie_menu{
+        width: 40%;
+        transform: translateY(25%);
+    }
+    .commande_delice{
+        padding-top: 5em;
+    }
+}
+
+
+@media screen and (min-width: 992px){
+
+    .img_delice{
+        height: 50em;
+    }
+    .composition_menu{
+        width: 100%;
+    }
+
+    .restau_delice{
+        padding: 1em;
+    }
+
+    .delice h2{
+        padding-top: 0;
+    }
+    .commande_delice{
+        margin-top: 2.5em;
+    }
+
 }
