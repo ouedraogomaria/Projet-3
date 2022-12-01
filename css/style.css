@@ -26,22 +26,73 @@ header{
 }
  
 
+h1{
+    margin: 0.3em 0;
+}
+
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    color: #9356Dc;
+    background-color: #ffffff;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    animation: disparaitre 1s 6s forwards;
+}
+
+.loader p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    width: 8em;
+    font-size: 1.5em;
+    border: 5px solid #9356Dc;
+    border-top: 5px solid #99E2Dc;
+    border-bottom: 5px solid #FF79DA;
+    border-radius: 50%;
+    font-family: "Shrikhand",cursive;
+    animation: spin 3s ease-in-out 2;
+}
+
+@keyframes disparaitre{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 .ville{
     display: flex;
     background-color: #f3f3f3;
     text-align: center;
     align-items: center;
     justify-content: center;
+    height: 4em;
     font-size: 0.7em;
-}  
+} 
 
-h1{
-    margin: 0.3em 0;  
-  }
+.ville h2{
+    font-size: 1.2em;
+}
 
 .iconeville{
     padding-right: 0.7em;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 /*explorer*/
 .explorer{
@@ -149,7 +200,7 @@ h1{
 /*images*/
 .menus{
     width: 100%;
-    height: 72em;
+    height: 85em;
     padding: 1em;
     background-color: #f6f6f6;
 }
@@ -157,13 +208,13 @@ h1{
 .img_menu{
     object-fit: cover;
     width: 100%;
-    height: 10em;
+    height: 13em;
     border-radius: 20px 20px 0 0;   
 }
 
 .card_menu{
     width: 100%;
-    height: 14em;
+    height: 17em;
     margin-bottom: 2em;
     background-color: #ffffff;
     box-shadow: 20px 10px 10px 25px #f2f2f2;
@@ -195,12 +246,12 @@ h1{
 
 .description>h3{
     margin: 0.2em;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .description>p{
     margin: 0.2em;
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 
 .description .fa-solid{
@@ -244,58 +295,13 @@ h1{
     
 }
 
-.loader{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    color: #9356Dc;
-    background-color: #ffffff;
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    animation: disparaitre 1s 6s forwards;
-}
-
-.loader p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8em;
-    width: 8em;
-    font-size: 1.5em;
-    border: 5px solid #9356Dc;
-    border-top: 5px solid #99E2Dc;
-    border-bottom: 5px solid #FF79DA;
-    border-radius: 50%;
-    font-family: "Shrikhand",cursive;
-    animation: spin 3s ease-in-out 2;
-}
-
-@keyframes disparaitre{
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(0);
-    }
-}
-
-@keyframes spin{
-    from{
-        transform: rotate(0);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
 
 /*footer*/
 footer{
     height: 11em;
     background-color: #353539;
     color: #ffffff;
-    padding-left: 0.5em;
+    padding-left: 1.5em;
     padding-top: 0.1em;
 }
 
@@ -325,7 +331,7 @@ footer i{
     .Fonctionnement{
         height: auto;
         
-        }
+    }
     .Fonctionnement h2{
         margin-left: 1em;
     }
@@ -355,43 +361,26 @@ footer i{
     }
 
     .menus{
-       height: 42em;
+       height: auto;
        margin-top: 2em;
-    }
-
-    .menus h2{
-        margin-bottom: 2em;
+       padding-bottom: 5em;
     }
     .card_menu{
-        width: 45%;
-        margin-right: 2em;
+        margin: 1em;
     }
-
+    
     .bloc_menus{
         display: flex;
         flex-direction: row;
-    }
-
-    .bloc_menus2{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .bloc_menus1{
-        margin-top: 2em;
-        margin-bottom: 2em;
-    }
- 
-    .bloc_menus2{
-        margin-top: 2em;
+        margin: 0.5em;
     }
 
     .menus h2{
-       margin-left: 5em;
-       margin-top: 2em;
-   }
-   
+       margin-left: 1.5em;
+   }   
 }
+
+
 /*Pages menus*/
 header i{
     position: absolute;
@@ -399,7 +388,7 @@ header i{
     left: 28px;
     top: 20px;
     color: #000000;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 900;
 }
 
@@ -437,6 +426,11 @@ header i{
     }   
 }
 
+
+.menu_plat{
+    margin-left: 3em;
+}
+
 /*A la française*/
 .restau_menu{
     align-items: center;
@@ -453,7 +447,7 @@ header i{
 }
 
 .française .fa-solid{
-    font-size: 1.5em;
+    font-size: 1.9em;
     position: absolute;
     right: 8%;
     transform: translateY(-200%); 
@@ -465,7 +459,7 @@ header i{
     transition: all 2s ease-in-out;    
  }
 .française .fa-regular{
-     font-size: 1.5em;
+     font-size: 1.9em;
      position: absolute;
      right: 8%; 
      transform:  translateY(-200%)   
@@ -507,9 +501,8 @@ header i{
     text-overflow: ellipsis;
     white-space: nowrap;
     box-shadow: 2px 1px 8px -3px #000000;
-    margin: 1em;
+    margin: 1em 0.5em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .detail{
@@ -519,7 +512,7 @@ header i{
     white-space: nowrap;
 }
 
-.detail h4 ,p{
+.detail h4,p{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -626,10 +619,6 @@ header i{
         width:100%;
         height: 40em; 
     }
-
-    .restau_menu h3{
-        font-size: 1em;
-    }
     .composition_restau{
         display: flex;
         justify-content: center;
@@ -640,6 +629,9 @@ header i{
 
     .française h2{
         padding-top: 1em;
+    }
+    .group_repas{
+        font-size: 0.8em;
     }
 }
 
@@ -673,7 +665,7 @@ header i{
     transform: translateY(-200%); 
     right: 8%;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1.9em;
     color: transparent;
     background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
     background-clip: text;
@@ -683,7 +675,7 @@ header i{
  }
 
 .enchante .fa-regular{
-     font-size: 1.5em;
+     font-size: 1.9em;
      position: absolute;
      right: 8%; 
      transform:  translateY(-200%); 
@@ -696,7 +688,7 @@ header i{
 
 .enchante h2{
     font-family: "Shrikhand",cursive;
-    padding-top: 2em;
+    padding-top: 1.5em;
     font-weight: 300;
     margin-left: 0.5em;
 }
@@ -724,9 +716,8 @@ header i{
     text-overflow: ellipsis;
     white-space: nowrap;
     box-shadow: 2px 1px 8px -3px #000000;
-    margin: 1em;
+    margin: 1em 0.5em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .detail_repas{
@@ -851,15 +842,15 @@ header i{
         justify-content: center;
        
     }
-    .menu_restau h3{
-        font-size: 1em;
-    }
     .categorie{
         min-width: 33%;
     }
     
     .enchante h2{
         padding-top: 1em;
+    }
+    .groupe{
+        font-size: 0.8em;
     }
 
 }
@@ -878,7 +869,7 @@ header i{
 
 
 
-/*La palette du goût*/
+/*La palette du gout*/
 .restaurants{
     align-items: center;
     background-color: #f6f6f6; 
@@ -897,7 +888,7 @@ header i{
     transform: translateY(-200%); 
     right: 8%;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1.9em;
     color: transparent;
     background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
     background-clip: text;
@@ -907,7 +898,7 @@ header i{
  }
 
 .Palette .fa-regular{
-     font-size: 1.5em;
+     font-size: 1.9em;
      position: absolute;
      right: 8%; 
      transform:  translateY(-200%);  
@@ -949,9 +940,8 @@ header i{
     text-overflow: ellipsis;
     white-space: nowrap;
     box-shadow: 2px 1px 8px -3px #000000;
-    margin: 1em;
+    margin: 1em 0.5em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .liste_repas{
@@ -969,7 +959,7 @@ header i{
 .liste_repas p{
     font-size: 0.8em;
 }
-.liste_repas>h4,p{
+.liste_repas>h4, p{
     margin: 0;
 }
 
@@ -1075,14 +1065,15 @@ header i{
         display: flex;
         justify-content: center;
     }
-    .resto_palette h3{
-        font-size: 1em;
-    }
+
     .resto_palette{
         min-width: 33%;
     }
     .Palette h2{
         padding-top: 1em;
+    }
+    .composition{
+        font-size: 0.8em;
     }
 }
 
@@ -1118,7 +1109,7 @@ header i{
     transform: translateY(-200%); 
     right: 8%;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1.9em;
     color: transparent;
     background-image: linear-gradient(0deg, rgb(147,86,220,1),rgb(255,121,218,1));
     background-clip: text;
@@ -1128,9 +1119,9 @@ header i{
  }
 
 .delice .fa-regular{
-     font-size: 1.5em;
+     font-size: 1.9em;
      position: absolute;
-     right: 3%; 
+     right: 8%; 
      transform:  translateY(-200%);  
   }
   
@@ -1169,9 +1160,8 @@ header i{
     text-overflow: ellipsis;
     white-space: nowrap;
     box-shadow:  2px 1px 8px -3px #000000;
-    margin: 0.5em;
+    margin: 1em 0.5em;
     border-radius: 1em;
-    font-size: 0.9em;
 }
 
 .repas_liste{
@@ -1182,7 +1172,7 @@ header i{
 }
 
 
-.repas_liste h4,p{
+.repas_liste h4, p{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1191,7 +1181,7 @@ header i{
 .repas_liste p{
     font-size: 0.8em;
 }
-.repas_liste>h4,p{
+.repas_liste>h4, p{
     margin: 0;
 }
 
@@ -1258,7 +1248,7 @@ header i{
 
 /*footer palette*/
 .footer_delice{
-    height: 11m;
+    height: 11em;
     background-color: #353539;
     color: #ffffff;
     padding-left: 1.5em;
@@ -1292,19 +1282,18 @@ header i{
         width:100%;
         height: 40em; 
     }
-    
     .composition_menu{
         display: flex;
         justify-content: center;
-    }
-    .categorie_menu h3{
-        font-size: 1em;
     }
     .categorie_menu{
         min-width: 33%;
     }
     .delice h2{
         padding-top: 1em;
+    }
+    .liste_menu{
+        font-size: 0.8em;
     }
 }
 
