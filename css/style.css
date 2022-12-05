@@ -17,7 +17,6 @@ header{
     justify-content: center;
     height: 4em;
     font-family: "Shrikhand",cursive;
-    text-align: center;
     font-size: 0.9em;
     box-shadow:  0 0 0.8em rgb(0 0 0 / 25%); 
     padding: 0.5em 0;
@@ -43,6 +42,16 @@ h1{
     animation: disparaitre 1s 6s forwards;
 }
 
+@keyframes disparaitre{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+
 .loader p{
     display: flex;
     justify-content: center;
@@ -58,14 +67,6 @@ h1{
     animation: spin 3s ease-in-out 2;
 }
 
-@keyframes disparaitre{
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(0);
-    }
-}
 
 @keyframes spin{
     from{
@@ -175,7 +176,7 @@ h1{
 }
 
 .Fonctionnement .info:hover .fa-solid{
-    color:  rgb(147,86,220,1);;
+    color:  rgb(147,86,220,1);
 }
 
 .Fonctionnement i{
@@ -406,15 +407,15 @@ header i{
 }
 
 .delay-2{
-    animation: apparence 2s both;
+    animation: apparence 1.5s both;
 }
 
 .delay-3{
-    animation: apparence 3s both;
+    animation: apparence 2s both;
 }
 
 .delay-4{
-    animation: apparence 4s both;
+    animation: apparence 2.5s both;
 }
 
 @keyframes apparence{
@@ -583,6 +584,12 @@ header i{
     border-radius: 2em;
     box-shadow: 0 1px 5px 0 black; 
 }
+
+.commande button:hover{
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
 
 /*footer français*/
 .footer_français{
@@ -800,6 +807,10 @@ header i{
     box-shadow: 0 1px 5px 0 black; 
 }
 
+.commandez button:hover{
+    transform: scale(1.03);
+    opacity: 0.9;
+}
 
 /*footer enchante*/
 .footer_enchante{
@@ -1023,6 +1034,10 @@ header i{
     box-shadow: 0 1px 5px 0 black; 
 }
 
+.choix_commande button:hover{
+    transform: scale(1.03);
+    opacity: 0.9;
+}
 
 /*footer palette*/
 .footer_palette{
@@ -1245,6 +1260,12 @@ header i{
     border-radius: 2em;
     box-shadow: 0 1px 5px 0 black; 
 }
+
+.commande_delice button:hover{
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
 
 /*footer palette*/
 .footer_delice{
